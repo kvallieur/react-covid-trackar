@@ -1,0 +1,81 @@
+body {
+  // background-color: #919191;
+  background: linear-gradient(to bottom,#85dbf8 -22%, #371A77 100%);
+  
+}
+
+.app {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  min-height: 98vh;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.app__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+  h1 {
+    background: linear-gradient(to right, #d41347 0%, #5e001b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.glow {
+  position: relative;
+  // display: inline-block;
+  // text-transform: uppercase;
+  // text-decoration: none;
+  // overflow: hidden;
+  // box-shadow: 0 0 10px #d41347, 0 0 30px #d41347, 0 0 30px #d41347;
+  // animation: blinker 3s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+.app__stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app__left {
+  flex: 0.8;
+}
+
+.app__right {
+  display: flex;
+}
+
+.app__dropdown {
+  background-color: white;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 3s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 990px) {
+  .app {
+    flex-direction: column;
+  }
+}
