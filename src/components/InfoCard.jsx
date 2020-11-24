@@ -2,11 +2,16 @@ import React from 'react'
 import { Card, CardContent, Typography } from '@material-ui/core'
 import '../styles/InfoCard.scss';
 import numeral from 'numeral'
+import { shallowEqual, useSelector } from 'react-redux';
+
 
 export const prettyPrintStat = (stat) =>
     stat ? `+${numeral(stat).format("0.0a")}` : "+0";
 
 function InfoCard({ title, cases, total, active, isRed, ...props }) {
+    const country = useSelector((state) => state.countryInfo, shallowEqual);
+    console.log(country);
+
     return (
 
         <Card onClick={props.onClick}

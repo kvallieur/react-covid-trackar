@@ -2,6 +2,8 @@ import React from 'react'
 import numeral from 'numeral'
 import { Map as LeafletMap, TileLayer, Circle, Popup } from 'react-leaflet'
 import '../styles/Map.scss';
+import { useSelector } from 'react-redux';
+
 
 const casesTypeColors = {
   cases: {
@@ -60,7 +62,23 @@ export const showDataOnMap = (data, casesType = "cases") =>
 
 
 
-function Map({ casesType, countries, center, zoom }) {
+function Map({ casesType, countries }) {
+  const countryCode = useSelector(state => state.countyCode);
+  const countryInfo = useSelector(state => state.countryInfo);
+  let center = { lat: 34.80746, lng: -40.4796 };
+  let zoom = 3;
+  
+  if(countryInfo && countryInfo.countryInfo) {
+    center = {lat: countryInfo.countryInfo.lat, lng: countryInfo.countryInfo.long};
+    zoom = 4;
+  }
+
+  if(countryCode === 'worldwide') {
+    console.log(`hgjg`)
+    center = { lat: 34.80746, lng: -40.4796 };
+    zoom = 3;
+  }
+
   return (
     <div className='map'>
       <LeafletMap center={center} zoom={zoom}>
