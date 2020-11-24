@@ -8,7 +8,6 @@ import "../styles/App.scss";
 function CountryPicker() {
   const dispatch = useDispatch();
   const [countries, setCountries] = useState([]);
-  const [countryInfo, setCountryInfo] = useState({});
   const [country, setCountry] = useState("worldwide");
 
   const getCountriesByName = async () => {
@@ -35,7 +34,6 @@ function CountryPicker() {
 
     await fetchCovidInfo(countryCode).then((response) => {
       // console.log(`getting covid info for ${countryCode}`)
-      setCountryInfo(response);
       dispatch(changeCountryInfo(response));
       // console.log(` countryInfo is ${JSON.stringify(response.countryInfo)}`);
     //   if (countryCode !== "worldwide") {
