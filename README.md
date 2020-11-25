@@ -5,6 +5,10 @@ It's powered by data from [disease.sh](https://disease.sh/)
 Completely written in React. This is just a learning project. deployed to firebase.
 you can view the app in live https://covid-trackar.web.app/
 
+## Note: 
+- App uses React Redux to maintain state. This is a simple app - it teaches the concepts of redux and state management
+
+
 
 ## Local - Setup
 - First run `npm i` - this will install all the dependencies needed for the app.
